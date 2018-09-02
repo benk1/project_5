@@ -1,0 +1,50 @@
+var company = "Integrify Academy";
+undefined
+company
+"Integrify Academy"
+console.log(company);
+Integrify Academy debugger eval code:1:1
+undefined
+console.log(company.length);
+17 debugger eval code:1:1
+undefined
+company.toUpperCase;
+function toUpperCase()
+console.log(company.toUpperCase);
+function toUpperCase()
+debugger eval code:1:1
+undefined
+var result = company.toUpperCase();
+undefined
+result;
+"INTEGRIFY ACADEMY"
+company.toLowerCase();
+"integrify academy"
+company.slice(0);
+"Integrify Academy"
+company.slice(0,1);
+"I"
+company.substr(1,3);
+"nte"
+company.substr(0,1);
+"I"
+company.include(Academy);
+ReferenceError: Academy is not defined[Learn More] debugger eval code:1:1
+company.include('Academy');
+TypeError: company.include is not a function[Learn More] debugger eval code:1:1
+company.includes('Academy');
+true
+array = company.split();
+Array [ "Integrify Academy" ]
+array
+Array [ "Integrify Academy" ]
+array = company.split(" ");
+Array [ "Integrify", "Academy" ]
+array
+Array [ "Integrify", "Academy" ]
+com
+ReferenceError: com is not defined[Learn More] debugger eval code:1:1
+company
+"Integrify Academy"
+company.replace('Integrify','Microsoft');
+"Microsoft Academy"
