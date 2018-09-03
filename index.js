@@ -198,7 +198,7 @@ function userIdGenerator() {
   }
   return randomId;
 }
-console.log(usergeneratedId());
+console.log(userIdGenerator());
 
 //QN 17
 
@@ -233,12 +233,13 @@ rgbColorGenerator();
 var personAccount = {
   firstName: "Ben",
   lastName: "Kakengi",
-  incomes: { work: 2000, art: 4000, salary: 6000 },
+
+  income: { bonus: 10000, online: 5500, salary: 4000 },
 
   expenses: { food: 500, gym: 800, travel: 1000 },
 
   totalIncome: function() {
-    let sum = this.incomes.work + this.incomes.art + this.incomes.salary;
+    let sum = this.income.work + this.income.art + this.income.salary;
     return sum;
   },
   totalExpenses: function() {
