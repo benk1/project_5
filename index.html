@@ -9,7 +9,78 @@
 </head>
 
 <body>
-  <script src="index.js"></script>
+
+  <script>
+    var personAccount = {
+      firstName: "Ben",
+      lastName: "Kakengi",
+
+      incomes: [
+        { description: "bonus", amount: 10000 },
+        { description: "online", amount: 5500 },
+        { description: "salary", amount: 4000 }
+      ],
+
+      expenses: [
+        { description: "food", amount: 500 },
+        { description: "gym", amount: 800 },
+        { description: "travel", amount: 1000 }
+      ],
+
+
+
+      totalIncome: function () {
+        //return this.incomes.reduce(function, 0);
+
+        let sum = 0;
+        for (let key in this.incomes) {
+          sum += this.incomes[key];
+        }
+        return sum;
+        //let sum = this.income.bonus + this.income.online + this.income.salary;
+        //return sum;
+      },
+
+      totalExpenses: function () {
+        let sum = 0;
+        for (let key in this.expenses) {
+          sum += this.expenses[key];
+        }
+        return sum;
+        //t sum1 = this.expenses.food + this.expenses.gym + this.expenses.travel;
+        // return sum1;
+      },
+
+      accountInfo: function () {
+        return `This is the account belong to ${this.firstName} ${this.lastName}.`;
+      },
+
+      addIncome: function () {
+        let description = parseInt(prompt("Enter description"));
+        let amount = parseInt(prompt("Enter amount"));
+        this.incomes.push({ description: description, amount: amount });
+        return incomes;
+      },
+
+      addExpense: function () {
+        let description = prompt("Enter description");
+        let amount = prompt("Enter amount");
+        this.expenses.push({ description: description, amount: amount });
+        return expenses;
+      },
+
+      accountBalance: function () {
+        let balance = parseInt(this.totalIncome()) - parseInt(this.totalExpenses());
+        return balance;
+      }
+    }
+
+    console.log(personAccount.totalIncome());
+    console.log(personAccount.totalExpenses());
+    console.log(personAccount.accountBalance());
+
+
+  </script>
 </body>
 
 </html>

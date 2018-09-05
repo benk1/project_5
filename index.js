@@ -21,10 +21,13 @@ console.log(company.trim());
 console.log(company.startsWith("Integrify Academy"));
 console.log(company.endsWith("Integrify Academy"));
 console.log(company.match(/a/g));
+console.log("Integrify".concat("Academy"));
+console.log(company.repeat(5));
 
 //QN 2
 var myAge = 25;
 var yourAge = 30;
+F;
 console.log(`I am ${myAge} yearsold.`);
 console.log(`You are ${yourAge} years old.`);
 
@@ -234,13 +237,18 @@ var personAccount = {
   firstName: "Ben",
   lastName: "Kakengi",
 
-  income: { bonus: 10000, online: 5500, salary: 4000 },
+  incomes: [{ bonus: 10000 }, { online: 5500 }, { salary: 4000 }],
 
-  expenses: { food: 500, gym: 800, travel: 1000 },
+  expenses: [{ food: 500, gym: 800, travel: 1000 }],
 
   totalIncome: function() {
-    let sum = this.income.work + this.income.art + this.income.salary;
+    sum = 0;
+    for (let key in this.income) {
+      sum += this.income[key];
+    }
     return sum;
+    //let sum = this.income.bonus + this.income.online + this.income.salary;
+    //return sum;
   },
   totalExpenses: function() {
     let sum1 = this.expenses.food + this.expenses.gym + this.expenses.travel;
@@ -315,3 +323,170 @@ function lotteryNumbers() {
   });
   console.log(sortedArray);
 }
+
+//Exercise 1
+//1.Variable
+//(a)
+var firstName = "Ben";
+var lastName = "kakengi";
+var maritalStaus = "divorced";
+var country = "Tanzania";
+var age = 29;
+console.log(`${firstName} ${lastName} ${maritalStaus} ${country}  ${country}`);
+//(b)
+var firstName = "Ben1",
+  lastName = "kakengi",
+  maritalStaus = "divorced",
+  country = "Tanzania",
+  age = 28;
+
+console.log(`${firstName} ${lastName} ${maritalStaus} ${country}  ${country}`);
+
+//(c)
+var myAge = 25;
+var yourAge = 30;
+console.log(`I am ${myAge} years old.`);
+console.log(`You are ${yourAge} years old.`);
+
+// 4 Boolean
+//(a)
+console.log(2 == "2");
+console.log(true == true);
+console.log(true || false);
+
+// 5 Arithmetic OPERATOR
+console.log(operandOne + 2);
+console.log(operandTwo + 4);
+
+//6.Comparison Operator
+console.log(4 > 3);
+console.log(4 >= 3);
+console.log(4 < 3);
+console.log(4 <= 3);
+console.log(4 == 4);
+//console.log(4! == 4);
+console.log(4 == "4");
+console.log(4 != "4");
+
+//7.logical operators
+//8 REPEAT DONE ABOVE
+//9
+let a = 4;
+let b = 3;
+a > b ? console.log("a is greater than b") : onsole.log("a is less than b");
+
+//QN 10  DONE REPEAT
+
+//QN 11
+//(a)
+for (var i = 0; i < 11; i++) {
+  console.log(i);
+}
+//(b)
+
+//QN 13 RE-DO
+var personAccount = {
+  firstName: "Ben",
+  lastName: "Kakengi",
+
+  incomes: [
+    { description: "bonus", amount: 10000 },
+    { description: "online", amount: 5500 },
+    { description: "salary", amount: 4000 }
+  ],
+
+  expenses: [
+    { description: "food", amount: 500 },
+    { description: "gym", amount: 800 },
+    { description: "travel", amount: 1000 }
+  ],
+
+  totalIncome: function() {
+    let sum = 0;
+    for (let key in this.incomes) {
+      sum += this.incomes[key];
+    }
+    return sum;
+    //let sum = this.income.bonus + this.income.online + this.income.salary;
+    //return sum;
+  },
+  totalExpenses: function() {
+    let sum = 0;
+    for (let key in this.expenses) {
+      sum += this.expenses[key];
+    }
+    return sum;
+    //t sum1 = this.expenses.food + this.expenses.gym + this.expenses.travel;
+    // return sum1;
+  },
+
+  accountInfo: function() {
+    return `This is the account belong to ${this.firstName} ${this.lastName}.`;
+  },
+
+  addIncome: function() {
+    let description = prompt("Enter description");
+    let amount = prompt("Enter amount");
+    this.incomes.push({ description: description, amount: amount });
+  },
+
+  addExpense: function() {
+    let description = prompt("Enter description");
+    let amount = prompt("Enter amount");
+    this.addExpenses.push({ description: description, amount: amount });
+  },
+
+  accountBalance: function() {
+    let balance = this.totalIncome() - this.totalExpenses();
+    return balance;
+  }
+};
+console.log(personAccount.totalIncome());
+console.log(personAccount.totalExpenses());
+console.log(personAccount.accountBalance());
+
+//QN 15
+string =
+  "He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.";
+arrayOfIncomes = string.match(/\d+/g);
+
+let total =
+  (parseInt(arrayOfIncomes[0]) +
+    parseInt(arrayOfIncomes[arrayOfIncomes.length - 1])) *
+  12;
+for (let i = 1; i < arrayOfInc - 1; i++) {
+  total += parseInt(arrayOfIncomomes.lengthes[i]);
+}
+console.log(total);
+
+//QN 16
+//(a)
+/*unction getStringList(array) {
+  return array.map(String);
+}
+console.log(getStringList([1, 2, 3, 4, 5, 6]));*/
+//(b)
+function getStringList(array) {
+  return array.filter(item => typeof item == "string");
+}
+console.log(getStringList([2, 3, "wewe", "mim", "nyie"]));
+
+//(C)
+function categorizeCountries(array) {
+  return array.filter(item => item.length <= 7);
+}
+console.log(categorizeCountries(countries));
+
+//(d)
+function getFirstTenCountries(array) {
+  return array.slice(0, 10);
+}
+console.log(getFirstTenCountries(countries));
+
+//(e)
+function getLastTenCountries(array) {
+  return array.slice(1).slice(-10);
+}
+console.log(getLastTenCountries(countries));
+
+//(f)
